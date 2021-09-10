@@ -1,0 +1,276 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="bubbles.css">
+	</head>
+	<body>
+
+	<script>
+		
+		$().ready( () => {
+			$(".message.marketing").hide()
+			$(".message.support").hide()
+			$(".message.notification").hide()
+			$(".message.ops").hide()
+			$(".message.analytics").hide()
+			$(".message.survey").hide()
+			$(".message.email").hide()
+			reevaluate()
+			$("#chat").show();
+		})
+		
+		function reevaluate() {
+			$(".date").each(function(){
+				
+				var el = $(this)
+				
+				el [ $(".message:visible", el.next()).length ? "show" : "hide" ]()
+				
+			})
+		}
+	</script>
+
+	<div id="controls">
+		<input type="checkbox"  onclick="$('.message.notification').toggle() ; reevaluate()"> Notifications
+		<input type="checkbox"  onclick="$('.message.marketing').toggle() ; reevaluate()"> Marketing
+		<input type="checkbox"  onclick="$('.message.support').toggle(); reevaluate()" > Support
+		<input type="checkbox"  onclick="$('.message.ops').toggle() ; reevaluate()"> Ops
+		<input type="checkbox"  onclick="$('.message.analytics').toggle() ; reevaluate()"> Analytics
+		<input type="checkbox"  onclick="$('.message.survey').toggle() ; reevaluate()"> Survey
+		<input type="checkbox"  onclick="$('.message.email').toggle() ; reevaluate()"> Email
+	</div>
+
+	<div class="chat" id="chat" style="display: none">
+	  <div class="date">
+	    Sept 1, 2019
+	  </div>
+	  <div class="mine messages">
+	    <div class="message last marketing">
+	      Hi Dan! Introducing our new softest shirt yet, the WONDERTEE!
+			<img src="https://cdn.shopify.com/s/files/1/0022/4008/6074/products/V109HEV_800x@2x.jpg?v=1563298985" width="250" style="text-align: left">
+	    </div>
+	  </div>
+	  
+
+	  <div class="date">
+	    Sept 2, 2019
+	  </div>
+	  <div class="yours messages">
+	    <div class="message event analytics">
+			Website Visit: 8 Products Viewed
+	    </div>
+	  </div>
+	  
+	  
+	  <div class="date">
+	    Sept 3, 2019
+	  </div>
+	  <div class="yours messages">
+	    <div class="message last support">
+	      Hi, do you have any medium red t-shirts in stock?
+	     </div>
+	  </div>
+	  <div class="mine messages">
+	    <div class="message last support">
+	      Yes, we have 5 in stock. You can <a href="">buy it here</a>.
+	    </div>
+	  </div>
+
+	  <div class="yours messages">
+	    <div class="message event analytics">
+			Website Visit: 8 Products Viewed
+	    </div>
+	    <div class="message event analytics">
+			1 Item added to cart
+	    </div>
+	  </div>
+
+
+	  <div class="yours messages">
+	    <div class="message last support">
+	      Great, thanks!
+	     </div>
+	    <div class="message action ops">
+	      Online Order #14520, routed to pick facility 1B-E. Priority 7E.
+	     </div>
+	</div>
+	
+	<div class="mine messages">
+	    <div class="message email">
+			Email sent: Your purchase confirmation.
+	    </div>
+	</div>
+
+	  <div class="date">
+	    Sept 4, 2019
+	  </div>
+	<div class="mine messages">
+	    <div class="message action ops">
+	      Order #14520 Shipped, UPS service code #129, left gate 4B, warehouse US-E1 
+	     </div>
+	  </div>
+
+
+	  <div class="date">
+	    Sept 6, 2019
+	  </div>
+	<div class="yours messages">
+	    <div class="message action ops">
+	      Order #14520 Delivered, recipient not present (per UPS code 2B4), prior approval
+	     </div>
+	  </div>
+
+
+	  <div class="date">
+	    Sept 7, 2019
+	  </div>
+	  <div class="yours messages">
+	    <div class="message last support">
+	      Hey, This shirt is fitting a bit more tightly than I expected. Can I exchange it for a large?
+	     </div>
+	  </div>
+	  <div class="mine messages">
+	    <div class="message last support">
+	      No problem, we'll send you a large. It will include a return label to use to return the medium that doesn't fit. Package will ship tomorrow.
+	    </div>
+	    <div class="message action ops">
+	      Return #RMA19238 Created, pre-ship authorized per rule #8B. Reason: customer service. 
+	     </div>
+	  </div>
+	  
+	  <div class="date">
+	    Sept 8, 2019
+	  </div>
+	<div class="mine messages">
+	    <div class="message action ops">
+	      Return #RMA19238 shipped, expedited service requested. UPS carrier code 123. 
+	     </div>
+	    <div class="message last notification">
+	      Your product has shipped. Expected delivery is Monday.
+	     </div>
+	  </div>
+	  
+	  <div class="date">
+	    Sept 9, 2019
+	  </div>
+	<div class="yours messages">
+	    <div class="message action ops">
+	      Return #RMA19238 Delivered, recipient present (per UPS code 8E) 
+	     </div>
+	  </div>
+
+	<div class="mine messages">
+	    <div class="message notification">
+	      Your package has been delivered, we hope you enjoy it! 
+	     </div>
+	    <div class="message last notification">
+			Please remember to ship your return with the included shipping label. Let us know if you need help!
+	     </div>
+	  </div>
+
+	  <div class="date">
+	    Sept 10, 2019
+	  </div>
+
+	<div class="yours messages">
+	    <div class="message last support">
+			Hi, I'm calling to ask where I should drop off the package for my return?
+			<div class="waveform">
+				<img src="waveform.png" class="waveform">
+				<img src="play.png" class="play">
+			</div>
+	     </div>
+	  </div>
+
+
+	<div class="mine messages">
+	    <div class="message last support">
+			Thank you for calling. We have a convenient home pickup service.
+			<div class="waveform">
+				<img src="waveform.png" class="waveform">
+				<img src="play.png" class="play">
+			</div>
+	     </div>
+	  </div>
+
+	<div class="yours messages">
+	    <div class="message last support">
+			Great, thanks. I'll send it tomorrow.
+			<div class="waveform">
+				<img src="waveform.png" class="waveform">
+				<img src="play.png" class="play">
+			</div>
+	     </div>
+	  </div>
+
+	  <div class="date">
+	    Sept 11, 2019
+	  </div>
+
+
+	<div class="yours messages">
+	    <div class="message action ops">
+	      Return #RMA19238 picked up by carrier, service level 2RR
+	     </div>
+	    <div class="message action ops">
+	      Return #RMA19238 refund payment released, fraud score -13, reputation 88.
+	     </div>
+	  </div>
+
+	<div class="mine messages">
+	    <div class="message last notification">
+			Your credit card has been refunded $19.99 for your recent return.
+	     </div>
+	</div>
+
+	  <div class="yours messages">
+	    <div class="message event analytics">
+			Website Visit: 2 Products Viewed
+	    </div>
+	    <div class="message event analytics">
+			Auto-Segment: Added customer to segment T-SHIRT buyer, high income.
+	    </div>
+	    <div class="message event analytics">
+			1 Item Added to Cart
+	    </div>
+	  </div>
+
+	  <div class="date">
+	    Sept 13, 2019
+	  </div>
+
+	  <div class="mine messages">
+	    <div class="message email ">
+			Email sent: Reminder, you left 1 item in your cart.
+	    </div>
+	    <div class="message email ">
+			Email opened: Reminder, you left 1 item in your cart.
+	    </div>
+	  </div>
+
+
+	  <div class="date">
+	    Sept 15, 2019
+	  </div>
+
+	<div class="mine messages">
+	    <div class="message last survey">
+	      From 1 to 10, how likely are you to refer us to your friend? 
+	     </div>
+	  </div>
+	<div class="yours messages">
+	    <div class="message last survey">
+	      9 
+	     </div>
+	  </div>
+
+	<div class="mine messages">
+	    <div class="message last survey">
+	      Thank you for your answer, we always strive to earn your business. 
+	     </div>
+	  </div>
+	  
+	  
+</div>
+</body>
+</html>

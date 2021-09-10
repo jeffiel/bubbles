@@ -1,0 +1,133 @@
+	body {
+	  font-family: helvetica;
+	  display: flex ;
+	  flex-direction: column;
+	  align-items: center;
+	}
+
+	div.waveform img.play { width: 25px; height: 25px; vertical-align: middle}
+	div.waveform img.waveform { width: 150px; overflow: hidden; vertical-align: middle}
+
+	.date { 
+	  text-align: center;
+	  font-size: .9em;
+	  display: inline-block;
+	  margin-top: 10px;
+	}
+	
+	.date + .date[display="None"] {
+		display: none;
+	}
+
+	.chat {
+	  width: 300px;
+	  height: 1200px;
+	  border: solid 1px #EEE;
+	  display: flex;
+	  flex-direction: column;
+	  padding: 10px;
+	  margin-top: 20px;
+	}
+
+	.messages {
+	  margin-top: 10px;
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.message {
+	  border-radius: 20px;
+	  padding: 8px 15px;
+	  margin-top: 5px;
+	  margin-bottom: 5px;
+	  display: inline-block;
+	}
+
+	.yours {
+	  align-items: flex-start;
+	}
+
+	.yours .message {
+	  margin-right: 25%;
+	  background-color: #eee;
+	  position: relative;
+	}
+
+	.yours .message.last:before {
+	  content: "";
+	  position: absolute;
+	  z-index: 0;
+	  bottom: 0;
+	  left: -7px;
+	  height: 20px;
+	  width: 20px;
+	  background: #eee;
+	  border-bottom-right-radius: 15px;
+	}
+	.yours .message.last:after {
+	  content: "";
+	  position: absolute;
+	  z-index: 1;
+	  bottom: 0;
+	  left: -10px;
+	  width: 10px;
+	  height: 20px;
+	  background: white;
+	  border-bottom-right-radius: 10px;
+	}
+
+	.mine {
+	  align-items: flex-end;
+	}
+
+	.mine .message {
+	  color: white;
+	  margin-left: 25%;
+	  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+	  background-attachment: fixed;
+	  position: relative;
+	}
+
+	.message.action {
+  	  background: linear-gradient(to bottom, #ea1400 0%, #ea5200 100%);
+  	  background-attachment: fixed;
+	  color: white;
+	}
+
+	.message.event {
+    	  background: linear-gradient(to bottom, #a800ea 0%, #cf00ea 100%);
+    	  background-attachment: fixed;
+		  color: white;
+	}
+
+	.message.email {
+    	  background: linear-gradient(to bottom, #eac700 0%, #e3db00 100%);
+    	  background-attachment: fixed;
+		  color: white;
+	}
+
+
+	.mine .message.last:before {
+	  content: "";
+	  position: absolute;
+	  z-index: 0;
+	  bottom: 0;
+	  right: -8px;
+	  height: 20px;
+	  width: 20px;
+	  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+	  background-attachment: fixed;
+	  border-bottom-left-radius: 15px;
+	}
+
+	.mine .message.last:after {
+	  content: "";
+	  position: absolute;
+	  z-index: 1;
+	  bottom: 0;
+	  right: -10px;
+	  width: 10px;
+	  height: 20px;
+	  background: white;
+	  border-bottom-left-radius: 10px;
+	}
